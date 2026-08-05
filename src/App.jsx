@@ -3,7 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 
 import Home from "./pages/Home";
 import Store from "./pages/Store";
-import Profile from "./pages/Profile";
+import Leaderboard from "./pages/Leaderboard";
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Route>
     </Routes>
   );
