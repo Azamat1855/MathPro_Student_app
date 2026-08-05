@@ -32,10 +32,6 @@ const TopNav = () => {
 
           {/* User Info */}
           <div className="ml-3 flex flex-col">
-            <span className="text-xs text-gray-500">
-              Welcome back
-            </span>
-
             <span className="text-base font-semibold text-gray-900">
               {user
                 ? `${user.first_name}${
@@ -47,7 +43,7 @@ const TopNav = () => {
         </div>
 
         {/* Group */}
-        <div className="rounded-full bg-white/30 px-4 py-2 text-sm font-semibold text-gray-700 backdrop-blur-md">
+        <div className="rounded-full text-xs bg-white/30 px-4 py-2 font-semibold text-gray-700 backdrop-blur-md">
           {group}
         </div>
       </div>
