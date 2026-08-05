@@ -1,11 +1,12 @@
 import { Flame, Coins } from "lucide-react";
+import Statistics from "../components/Statistics";
 
 const Home = () => {
   return (
     <div className="space-y-6">
       {/* Title */}
-      <h1 className="text-4xl font-bold text-gray-900">
-        Your stats:
+      <h1 className="text-4xl font-bold text-gray-900 mt-5 text-center">
+        Your statistics
       </h1>
 
       {/* Stats */}
@@ -40,6 +41,7 @@ const Home = () => {
           </h2>
         </div>
       </div>
+      <Statistics/>
     </div>
   );
 };
