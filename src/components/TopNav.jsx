@@ -10,7 +10,7 @@ const TopNav = () => {
 
   return (
     <div className="fixed top-4 left-4 right-4 z-50">
-      <div className="flex items-center rounded-full border border-t-white/50 border-r-white/30 border-b-black/10 border-l-black/10 bg-gray-200 px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.15)] backdrop-blur-3xl">
+      <div className="flex items-center rounded-full border border-t-white/50 border-r-white/30 border-b-black/10 border-l-black/10 px-4 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.15)] backdrop-blur-3xl">
         {/* Avatar */}
         <div className="h-12 w-12 overflow-hidden rounded-full border border-white/60 bg-white shadow">
           {user?.photo_url ? (

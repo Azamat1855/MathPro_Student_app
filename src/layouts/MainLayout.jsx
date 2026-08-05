@@ -4,10 +4,12 @@ import BottomNav from "../components/BottomNav";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen bg-neutral-100 pt-24 pb-24">
+    <div className="min-h-screen">
       <TopNav />
 
-      <Outlet />
+      <main className="px-6 pt-24 pb-24">
+        <Outlet />
+      </main>
 
       <BottomNav />
     </div>
