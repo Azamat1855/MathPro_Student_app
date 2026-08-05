@@ -1,40 +1,18 @@
-import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
 
-function App() {
-  const [user, setUser] = useState(null);
+import Home from "./pages/Home";
+import Store from "./pages/Store";
+import Profile from "./pages/Profile";
 
-  useEffect(() => {
-    if (!window.Telegram) {
-      console.log("Telegram object not found");
-      return;
-    }
-
-    const tg = window.Telegram.WebApp;
-
-    tg.ready();
-    tg.expand();
-
-    console.log(tg);
-    console.log(tg.initDataUnsafe);
-
-    setUser(tg.initDataUnsafe?.user ?? null);
-  }, []);
-
+export default function App() {
   return (
-    <div>
-      <h1>Telegram Mini App</h1>
-
-      {user ? (
-        <>
-          <p>ID: {user.id}</p>
-          <p>Name: {user.first_name}</p>
-          <p>Username: {user.username}</p>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/profile" element={<Profile />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;
