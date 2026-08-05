@@ -1,22 +1,34 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
 
-    if (!tg) {
-      console.log("Not inside Telegram");
-      return;
-    }
+    if (!tg) return;
 
     tg.ready();
     tg.expand();
 
-    console.log("Telegram User:", tg.initDataUnsafe.user);
-    console.log("Theme:", tg.colorScheme);
+    setUser(tg.initDataUnsafe.user);
   }, []);
 
-  return <h1>Hello Telegram!</h1>;
+  return (
+    <div>
+      <h1>Telegram Mini App</h1>
+
+      {user ? (
+        <>
+          <p>ID: {user.id}</p>
+          <p>Name: {user.first_name}</p>
+          <p>Username: {user.username}</p>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 }
 
 export default App;
