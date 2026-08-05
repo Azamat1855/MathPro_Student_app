@@ -4,14 +4,20 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const tg = window.Telegram?.WebApp;
+    if (!window.Telegram) {
+      console.log("Telegram object not found");
+      return;
+    }
 
-    if (!tg) return;
+    const tg = window.Telegram.WebApp;
 
     tg.ready();
     tg.expand();
 
-    setUser(tg.initDataUnsafe.user);
+    console.log(tg);
+    console.log(tg.initDataUnsafe);
+
+    setUser(tg.initDataUnsafe?.user ?? null);
   }, []);
 
   return (
