@@ -4,7 +4,7 @@ import BottomNav from "../components/BottomNav";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <TopNav />
 
       <main className="px-6 pt-24 pb-24">
